@@ -1,5 +1,8 @@
 @charset "UTF-8";
 /* Body */
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f2f2f2;
@@ -15,15 +18,27 @@ body {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  height: 1000px;
+  height: 100%;
   background-color: #ffffff;
 }
 /* Navigation */
 header {
   width: 100%;
   height: 5%;
-  background-color: #52bad5;
-  border-bottom: 1px solid #2c9ab7;
+}
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  margin-right: 0%;
+  width: 100%;
+  background-color: rgba(89, 207, 148, 60%);
+}
+.trident-style {
+  color: rgb(107, 193, 243)
+}
+.trident-style:hover {
+  color: lightcoral;
 }
 .logo {
   color: #fff;
@@ -32,8 +47,11 @@ header {
   width: 10%;
   float: left;
   margin-top: 15px;
-  margin-left: 25px;
+  margin-left: 20px;
   letter-spacing: 4px;
+}
+.logo:hover {
+  color: lightskyblue;
 }
 nav {
   float: right;
@@ -60,7 +78,7 @@ ul li a {
   text-decoration: none;
 }
 ul li:hover a {
-  color: #2c9ab7;
+  color: lightskyblue;
 }
 .home_header {
   color: #ffffff;
@@ -81,6 +99,7 @@ ul li:hover a {
   background-repeat: no-repeat;
   padding-top: 150px;
   padding-bottom: 150px;
+  height: 150px;
 }
 .light {
   font-weight: bold;
@@ -154,7 +173,7 @@ ul li:hover a {
 .projects {
   background-color: #2d9ab7;
   background-image: url(../images/bottomParallax.png);
-  height: 400px;
+  height: 300px;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -213,6 +232,14 @@ footer .footer_column p {
   font-weight: lighter;
   margin-left: 20px;
   margin-right: 20px;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently */
 }
 .button {
   width: 200px;
