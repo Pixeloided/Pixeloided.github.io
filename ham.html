@@ -14,11 +14,28 @@
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
+    img {
+        scale: 1;
+        transition: all 0.5s ease;
+    }
+    img:hover {
+        scale: 1.1;
+        rotate: -5deg;
+        transition: all 0.5s ease;
+    }
+    h1 {
+        transition: all 1s ease;
+    }
+    h1:hover {
+        text-shadow: 10px 10px 10px rgb(58, 58, 58);
+        color: salmon;
+        transition: all 1s ease;
+    }
 </style>
 <body>
     <div class="content">
         <h1 style="font-family: Arial, Helvetica, sans-serif; text-align: center;">Ham are person too</h1>
-        <img src="./images/ham.png" alt="ham">
+        <img src="https://pixeloided.github.io/images/ham.png" alt="ham">
     </div>
 </body>
 </html>
