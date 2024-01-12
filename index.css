@@ -3,7 +3,9 @@
   --light-bg-color: rgb(163, 204, 228);
   --red-accent: #ff5277;
   --red-accent-hover: #ff6b92;
+  --red-inverted: #00ad88;
   font-family: "Comfortaa", sans-serif;
+  scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,10 +35,23 @@
   }
 }
 
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  user-select: none;
 }
 
 .bg-stars {
@@ -98,7 +113,7 @@ body {
 
 .title {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
@@ -107,6 +122,29 @@ body {
   font-size: 8rem;
   font-weight: 700;
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
+  user-select: text;
+}
+
+.scroll-arrow {
+  animation: bounce 2s infinite;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  width: 100%;
+  bottom: 10%;
+  z-index: 7;
+  transition: all 0.25s linear;
+}
+
+.scroll-arrow div {
+  scale: 3;
+  border-radius: 100%;
+}
+
+.scroll-arrow div img {
+  background-color: var(--red-inverted);
+  border-radius: 100%;
+  filter: invert(100%);
 }
 
 .content {
@@ -146,8 +184,7 @@ body {
 
 .content__navbar a img {
   scale: 1.5;
-  filter: invert(99%) sepia(23%) saturate(1119%) hue-rotate(194deg)
-    brightness(113%) contrast(100%);
+  filter: invert(100%);
 }
 
 .content__navbar a:hover {
