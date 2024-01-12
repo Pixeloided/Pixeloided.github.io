@@ -1,6 +1,8 @@
 :root {
   --dark-bg-color: rgb(44, 53, 77);
   --light-bg-color: rgb(163, 204, 228);
+  --red-accent: #ff5277;
+  --red-accent-hover: #ff6b92;
   font-family: "Comfortaa", sans-serif;
 }
 
@@ -13,6 +15,9 @@
   }
   .bg-clouds {
     display: none;
+  }
+  .bg-grass {
+    filter: contrast(0.7);
   }
 }
 
@@ -83,6 +88,14 @@ body {
   z-index: 3;
 }
 
+.bg-grass {
+  position: absolute;
+  width: 100%;
+  image-rendering: pixelated;
+  z-index: 5;
+  top: 105vh;
+}
+
 .title {
   position: absolute;
   top: 50%;
@@ -94,4 +107,52 @@ body {
   font-size: 8rem;
   font-weight: 700;
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
+}
+
+.content {
+  position: absolute;
+  top: 125vh;
+  z-index: 8;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.content__navbar {
+  text-align: center;
+  background-color: var(--red-accent);
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: linear 0.1s;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px;
+}
+
+.content__navbar:hover {
+  rotate: -1deg;
+  transition: linear 0.1s;
+}
+
+.content__navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  padding: 1rem;
+  display: inline-block;
+  transition: linear 0.1s;
+}
+
+.content__navbar a img {
+  scale: 1.5;
+  filter: invert(99%) sepia(23%) saturate(1119%) hue-rotate(194deg)
+    brightness(113%) contrast(100%);
+}
+
+.content__navbar a:hover {
+  background-color: var(--red-accent-hover);
+  border-radius: 10px;
+  scale: 1.1;
+  transition: linear 0.1s;
 }
