@@ -48,6 +48,15 @@
   }
 }
 
+@keyframes pulse_shadow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 148, 109, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 10px 20px rgba(0, 148, 109, 0);
+  }
+}
+
 @keyframes flicker {
   0% {
     opacity: 0.5;
@@ -169,6 +178,7 @@ body {
 }
 
 .scroll-arrow div img {
+  animation: pulse_shadow 1s infinite ease-out;
   background-color: var(--red-inverted);
   border-radius: 100%;
   filter: invert(100%);
