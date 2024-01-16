@@ -15,8 +15,10 @@ document.addEventListener("scroll", function () {
 
   if (scrollY > 120) {
     const arrow = document.querySelector(".scroll-arrow");
-    arrow.style.opacity = 0;
-    arrow.style.scale = 0.75;
+    arrow.style = "scale: 0.75; opacity: 0;";
+    setTimeout(() => {
+      arrow.style = "display: none;";
+    }, 500);
   }
 
   parallax.forEach((item, index) => {
